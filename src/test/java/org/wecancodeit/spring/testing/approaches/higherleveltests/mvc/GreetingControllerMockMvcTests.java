@@ -4,6 +4,7 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
@@ -44,6 +45,15 @@ public class GreetingControllerMockMvcTests {
 	}
 
 	/**
+	 * Verifies that our model contains a "name" attribute and that its value is "George".
+	 * @throws Exception
+	 */
+	@Test
+	public void shouldPutNameInModel() throws Exception {
+		mvc.perform(get("/sayHello?name=George")).andExpect(model().attribute("name", is("George")));
+	}
+
+	/**
 	 * <p>
 	 * Verify that the html returned contains the expected content. This is less
 	 * useful for html than for endpoints that return JSON or XML.
@@ -67,5 +77,6 @@ public class GreetingControllerMockMvcTests {
 		mvc.perform(get("/sayHello?name=George")).andExpect(status().isOk()).andExpect(view().name(is("hello")))
 				.andExpect(content().string(containsString("Hello, George!")));
 	}
+
 
 }
