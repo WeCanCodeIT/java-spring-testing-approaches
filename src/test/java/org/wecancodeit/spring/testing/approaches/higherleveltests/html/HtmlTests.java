@@ -26,7 +26,7 @@ public class HtmlTests {
 	private WebClient webClient;
 
 	@Test
-	public void shouldReceiveExpectedHtml() throws IOException {
+	public void shouldGreet() throws IOException {
 
 		HtmlPage response = webClient.getPage("/sayHello?name=George");
 
