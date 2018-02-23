@@ -1,4 +1,4 @@
-package org.wecancodeit.spring.testing.approaches.html;
+package org.wecancodeit.spring.testing.approaches.higherleveltests.html;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -11,28 +11,26 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.wecancodeit.spring.testing.approaches.GreetingController;
 
 import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.DomNode;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
+//TODO we can do much more complex things, should we illustrate with an example?
 @RunWith(SpringRunner.class)
-@WebMvcTest(HtmlApproachesController.class)
-public class HtmlUnitTest {
+@WebMvcTest(GreetingController.class)
+public class HtmlTests {
 
 	@Resource
 	private WebClient webClient;
-	
+
 	@Test
 	public void shouldReceiveExpectedHtml() throws IOException {
-		
-		String uri = "/sayHello?name=George";
-		
-		HtmlPage response = webClient.getPage(uri);
-		//TODO we can do much more complex things, need an example of using xpath or the like
-		
-		// this is a CSS selector
-		String firstParagraphContent = response.querySelector(".message").getTextContent();
-		
-		assertThat(firstParagraphContent, is("Hello, George!"));
+
+		HtmlPage response = webClient.getPage("/sayHello?name=George");
+
+		DomNode elementWithMessageId = response.querySelector(".message"); // this is a CSS selector
+		assertThat(elementWithMessageId.getTextContent(), is("Hello, George!"));
 	}
 }
