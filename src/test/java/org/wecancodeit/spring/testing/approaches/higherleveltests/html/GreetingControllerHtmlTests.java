@@ -20,7 +20,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 //TODO we can do much more complex things, should we illustrate with an example?
 @RunWith(SpringRunner.class)
 @WebMvcTest(GreetingController.class)
-public class HtmlTests {
+public class GreetingControllerHtmlTests {
 
 	@Resource
 	private WebClient webClient;
