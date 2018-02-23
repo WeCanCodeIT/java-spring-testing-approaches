@@ -60,7 +60,7 @@ public class GreetingControllerMockMvcTests {
 	}
 
 	/**
-	 * You may see these tests combined, like so.
+	 * You may see these one or more of these tests combined, like so.
 	 */
 	@Test
 	public void shouldGreet() throws Exception {
