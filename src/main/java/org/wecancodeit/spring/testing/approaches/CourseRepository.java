@@ -2,6 +2,9 @@ package org.wecancodeit.spring.testing.approaches;
 
 import java.util.Collection;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class CourseRepository {
 
 	public Course findOne(long arbitraryCourseId) {

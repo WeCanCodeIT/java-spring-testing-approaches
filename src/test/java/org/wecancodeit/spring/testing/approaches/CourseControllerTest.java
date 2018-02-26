@@ -15,10 +15,10 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.ui.Model;
 
-public class SimpleCourseControllerTest {
+public class CourseControllerTest {
 
 	@InjectMocks
-	private SimpleCourseController underTest;
+	private CourseController underTest;
 
 	@Mock
 	private CourseRepository repository;
