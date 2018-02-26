@@ -1,4 +1,4 @@
-package org.wecancodeit.spring.testing.approaches.higherleveltests.mvc;
+package org.wecancodeit.spring.testing.approaches.integrationtests.mvc;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;

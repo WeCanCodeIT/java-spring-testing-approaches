@@ -1,4 +1,4 @@
-package org.wecancodeit.spring.testing.approaches.higherleveltests.springconfiguration;
+package org.wecancodeit.spring.testing.approaches.integrationtests.springconfiguration;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

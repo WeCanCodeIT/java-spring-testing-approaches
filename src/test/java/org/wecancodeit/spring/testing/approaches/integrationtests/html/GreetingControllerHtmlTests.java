@@ -1,4 +1,4 @@
-package org.wecancodeit.spring.testing.approaches.higherleveltests.html;
+package org.wecancodeit.spring.testing.approaches.integrationtests.html;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
